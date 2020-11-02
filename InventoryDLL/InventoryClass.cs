@@ -48,6 +48,26 @@ namespace InventoryDLL
         FindPartsListReportDataSet aFindPartsListReportDataSet;
         FindPartsListReportDataSetTableAdapters.FindPartsListReportTableAdapter aFindPartsListReportTableAdapter;
 
+        ClearWarehouseInventoryEntryTableAdapters.QueriesTableAdapter aClearWarehouseInventoryTableAdpater;
+
+        public bool ClearWarehouseInventory(int intWarehouseID)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aClearWarehouseInventoryTableAdpater = new ClearWarehouseInventoryEntryTableAdapters.QueriesTableAdapter();
+                aClearWarehouseInventoryTableAdpater.ClearWarehouseInventory(intWarehouseID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Inventory Class // Clear Warehouse Inventory " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
         public FindPartsListReportDataSet FindPartsListReport()
         {
             try

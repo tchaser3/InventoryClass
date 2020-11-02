@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearWarehouseInventoryEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearWarehouseInventoryEntry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindCompleteInventoryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +98,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClearWarehouseInventoryEntry.xsc">
+      <DependentUpon>ClearWarehouseInventoryEntry.xsd</DependentUpon>
+    </None>
+    <None Include="ClearWarehouseInventoryEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClearWarehouseInventoryEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearWarehouseInventoryEntry.xss">
+      <DependentUpon>ClearWarehouseInventoryEntry.xsd</DependentUpon>
+    </None>
     <None Include="FindCompleteInventoryDataSet.xsc">
       <DependentUpon>FindCompleteInventoryDataSet.xsd</DependentUpon>
     </None>
